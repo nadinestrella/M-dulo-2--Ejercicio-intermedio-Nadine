@@ -1,0 +1,15 @@
+.button{
+    width: 50px;
+    height: 30px;
+    background-color: rgb(87, 220, 195);
+    color: white;
+    border-radius: 5px;
+}
+.resultMsg{
+    width: 150px;
+    height: 30px;
+    background-color: rgb(87, 220, 195);
+    color: white;
+    border-radius: 5px;
+
+}
