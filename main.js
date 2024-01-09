@@ -9,8 +9,8 @@ const computer = document.querySelector ('.js-pc');
 
 
 const playOptions = () => {
-    const valueOptions = userOption.value;
-    playResult.innerHTML = valueOptions;    
+    playResult.innerHTML= userOption.value;
+        
 }; // este es el selector 
 
 const getRandom = () => {
@@ -19,34 +19,38 @@ const getRandom = () => {
 }//esta funcion consigue el numero aleatorio 
 
 const numberResult = () => {
-    if (getRandomNumber <= 3){
-        return piedra;
-    } if (getRandomNumber >=7) {
-        return papel;
+    const randomNumber = getRandom ()
+    if (randomNumber<= 3){
+        return 'piedra';
+    } if (randomNumber >=7) {
+        return 'papel';
     }else {
-        return tijera; 
+        return 'tijera'; 
     } 
 } //funcion que compara el numero random 
 
 const winnerResult = () => {
     const playOptions = ''
-    const random = getRandom();
+    const random = numberResult (); //no generar numbero random 
     console.log(random);
-    if (playOptions === numberResult){
-        playResult.innerHTML = `Empate`;
+    if (playOptions === 'piedra' &&  random === 'tijera'){
+        playResult.innerHTML = `Has Ganado!`;
+    }else if (playOptions === 'papel' &&  random === 'piedra'){
+        playResult.innerHTML = `Has Ganado!`;
+    }else if (playOptions === 'tijera' &&  random === 'piedra'){
+        playResult.innerHTML = `Has Ganado!`;
+    }else if (playOptions === random){
+        playResult.innerHTML = `Empate!`;
+    }else{
+        playResult.innerHTML = `Has perdido!`;
 
-    }if (playOptions >= numberResult ){
-        playResult.innerHTML = ``
-
-    }
-
-    
-}; 
+    }    
+}; //funcion final 
 
 //funcion para dar las conclusiones 
 
     /*switch (true){
-        case player === "piedra" && computer === "tijera":
+        case playOptions === 'piedra && ' numberResult === 'tijera':
         
         break;
     case player === "papel" && computer === "piedra":
@@ -61,17 +65,10 @@ const winnerResult = () => {
         
     }*/
 
-
-
-
 function handleClick(event) {
     event.preventDefault();
     playOptions();
-    console.log (getRandom);
-    
-
+    winnerResult();
 }
-
-
 
 btn.addEventListener('click', handleClick);
