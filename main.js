@@ -44,7 +44,6 @@ const winnerResult = () => {
         msgResult .innerHTML = `Empate!`;
     }else{
         msgResult .innerHTML = `Has perdido!`;
-
     }    
 }; //funcion final 
 
@@ -52,10 +51,7 @@ const winnerResult = () => {
 
 function handleClick(event) {
     event.preventDefault();
-    
     winnerResult();
-    console.log (winnerResult);
-
 }
 
 btn.addEventListener('click', handleClick);
